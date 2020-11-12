@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import com.myweb.bbs.service.BbsService;
+import com.myweb.bbs.service.ContentServiceImpl;
 import com.myweb.bbs.service.GetListServiceImpl;
 import com.myweb.bbs.service.RegistServiceImpl;
 
@@ -67,6 +68,16 @@ public class BbsController extends HttpServlet {
 			service.execute(request, response);
 			
 			request.getRequestDispatcher("index.jsp").forward(request, response);
+		}else if(command.equals("/content.bbs")) {
+			service = new ContentServiceImpl();
+			service.execute(request, response);
+			
+			request.getRequestDispatcher("/bbs/bbs_content.jsp").forward(request, response);
+		}else if(command.equals("/update.bbs")) {
+			service = new ContentServiceImpl();
+			service.execute(request, response);
+			
+			request.getRequestDispatcher("/bbs/bbs_modify.jsp").forward(request, response);
 		}
 	
 		

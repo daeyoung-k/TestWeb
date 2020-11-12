@@ -11,19 +11,19 @@
                     <form action="">
                         <div class="form-group">
                             <label>글번호</label>
-                            <input type="text" class="form-control">
+                            <input type="text" class="form-control" placeholder="${vo.bno }번의 게시글" disabled>
                         </div>
                         <div class="form-group">
                             <label>글쓴이</label>
-                            <input type="text" class="form-control" placeholder="자유">
+                            <input type="text" class="form-control" placeholder="${vo.writer }">
                         </div>
                         <div class="form-group">
                             <label>제목</label>
-                            <input type="text" class="form-control" placeholder="자유">
+                            <input type="text" class="form-control" placeholder="${vo.title }">
                         </div>
                         <div class="form-group">
                             <label>내용</label>
-                            <textarea class="form-control" rows="5"></textarea>
+                            <textarea class="form-control" rows="5">${vo.content }</textarea>
                         </div>
 
                         <!--구현로직: 버튼은 온클릭을 사용하던 자바스크립트를 이용해야 합니다-->

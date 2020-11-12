@@ -118,7 +118,30 @@ public class BbsDAO {
 		return total;
 	}
 	
-	
+	public BbsVO getContent(String bno) {
+		BbsVO vo = new BbsVO();
+		
+		String sql = "select * from bbs where bno = ?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, bno);
+			
+			rs = pstmt.executeQuery();
+			if(rs.next()) {
+				vo.setBno(rs.getInt("bno"));
+				vo.setContent(rs.getString("content"));
+				vo.setTitle(rs.getString("title"));
+				vo.setWriter(rs.getString("writer"));
+				vo.setRegdate(rs.getTimestamp("regdate"));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			JdbcUtil.close(conn, pstmt, rs);
+		}
+		return vo;
+	}
 	
 	
 	

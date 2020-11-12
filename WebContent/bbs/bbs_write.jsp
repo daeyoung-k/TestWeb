@@ -24,7 +24,7 @@
                         </tbody>
                     </table>
                     
-                    <input type="button" class="btn btn-primary pull-left" onclick="location.href='main.bbs'"value="목록">
+                    <input type="button" class="btn btn-primary pull-left" onclick="location.href='main.bbs'" value="목록">
                     <input type="submit" class="btn btn-primary pull-right" value="글쓰기">
                 </form>
             </div>
