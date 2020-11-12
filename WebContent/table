@@ -1,0 +1,25 @@
+유저테이블
+CREATE TABLE user1(
+    id VARCHAR2(30) not null,
+    pw VARCHAR2(30) not null,
+    name VARCHAR2(30) not null,
+    phone VARCHAR2(30),
+    email VARCHAR2(30),
+    address VARCHAR2(100),
+    address1 VARCHAR2(100),
+    regdate date default sysdate
+);
+alter table user1 add CONSTRAINT user1_pk PRIMARY key (id);
+
+select * from user1;
+
+게시판 테이블
+CREATE table bbs(
+    bno number(10,0) not null,
+    writer varchar2(50) not null,
+    title VARCHAR2(200) not null,
+    content VARCHAR2(2000),
+    regdate date DEFAULT sysdate    
+);
+alter table bbs add CONSTRAINT bbs_pk primary key (bno);
+create SEQUENCE bbs_seq start with 1 INCREMENT by 1 NOCACHE;
