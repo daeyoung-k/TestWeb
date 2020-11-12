@@ -142,10 +142,25 @@ public class BbsDAO {
 		}
 		return vo;
 	}
-	
-	
-	
-	
+
+	public void update(String bno, String writer, String title, String content) {
+		
+		String sql = "update bbs set writer = ?, title = ?, content = ? where bno = ?";
+		try {
+			conn = ds.getConnection();
+			pstmt = conn.prepareStatement(sql);
+			pstmt.setString(1, writer);
+			pstmt.setString(2, title);
+			pstmt.setString(3, content);
+			pstmt.setString(4, bno);
+			
+			pstmt.executeUpdate();
+		} catch (Exception e) {
+			e.printStackTrace();
+		}finally {
+			JdbcUtil.close(conn, pstmt, rs);
+		}	
+	}	
 	
 	
 	
@@ -155,3 +170,4 @@ public class BbsDAO {
 	
 	
 }
+

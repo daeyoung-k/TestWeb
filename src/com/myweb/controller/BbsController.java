@@ -11,6 +11,7 @@ import com.myweb.bbs.service.BbsService;
 import com.myweb.bbs.service.ContentServiceImpl;
 import com.myweb.bbs.service.GetListServiceImpl;
 import com.myweb.bbs.service.RegistServiceImpl;
+import com.myweb.bbs.service.UpdateServiceImpl;
 
 
 @WebServlet({"*.bbs", "*.main"})
@@ -78,6 +79,11 @@ public class BbsController extends HttpServlet {
 			service.execute(request, response);
 			
 			request.getRequestDispatcher("/bbs/bbs_modify.jsp").forward(request, response);
+		}else if(command.equals("/updateFrom.bbs")) {
+			service = new UpdateServiceImpl();
+			service.execute(request, response);
+			
+			response.sendRedirect("content.bbs?bno=" + request.getParameter("bno"));
 		}
 	
 		
