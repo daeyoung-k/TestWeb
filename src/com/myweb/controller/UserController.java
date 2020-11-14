@@ -12,6 +12,7 @@ import javax.servlet.http.HttpSession;
 
 import com.myweb.bbs.service.BbsService;
 import com.myweb.bbs.service.GetListServiceImpl;
+import com.myweb.bbs.service.GetUserListServiceImpl;
 import com.myweb.user.service.UserDeleteServiceImpl;
 import com.myweb.user.service.UserJoinServiceImpl;
 import com.myweb.user.service.UserLoginServiceImpl;
@@ -89,6 +90,9 @@ public class UserController extends HttpServlet {
 			}
 			
 		}else if(command.equals("/mypage.user1")) {//마이페이지
+			service1 = new GetUserListServiceImpl();
+			service1.execute(request, response);
+			
 			request.getRequestDispatcher("/user/user_mypage.jsp").forward(request, response);
 			
 		}else if(command.equals("/logout.user1")) {//로그아웃

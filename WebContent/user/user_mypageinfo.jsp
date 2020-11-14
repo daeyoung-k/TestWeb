@@ -22,15 +22,16 @@
                             </tr>
                             <tr>
                                 <td class="m-title">*이름</td>
-                                <td><input class="form-control input-sm" name="name" type="text" placeholder="${user.name }"></td>
-                            </tr>
+                                <td><input class="form-control input-sm" name="name" placeholder="${user.name }" type="text" required></td>
+                            </tr>                            
+                            <%System.out.println(request.getParameter("name")); %>
                             <tr>
                                 <td class="m-title">*비밀번호</td>
-                                <td><input name="pw" type="password"class="form-control input-sm"></td>
+                                <td><input name="pw" type="password"class="form-control input-sm" ></td>
                             </tr>
                             <tr>
                                 <td class="m-title">*비밀번호확인</td>
-                                <td><input name="pwCheck" type="password" class="form-control input-sm"></td>
+                                <td><input name="pwCheck" type="password" class="form-control input-sm" ></td>
                             </tr>
                             <tr>
                                 <td class="m-title">*E-mail</td>
@@ -99,6 +100,8 @@
 			}else if(document.regform.pw.value != document.regform.pwCheck.value){
 				alert('비밀번호가 동일하지 않습니다.');
 				return;			
+			}else if(document.regform.name.value == ''){
+				alert('이름을 입력하세요.')
 			}else{
 				document.regform.submit();
 			}

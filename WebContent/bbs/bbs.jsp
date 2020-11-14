@@ -32,7 +32,7 @@
                 <div class="text-center">
                     <ul class="pagination pagination-sm">
                     	<c:if test="${pageVO.prev }">
-                        <li><a href="main.bbs?pageNum=${pageVO.startpage - 1 }&amount=${pagevo.amount}">이전</a></li>
+                        <li><a href="main.bbs?pageNum=${pageVO.startPage - 1 }&amount=${pageVO.amount}">이전</a></li>
                         </c:if>
                        <c:forEach var="num" begin="${pageVO.startPage }" end="${pageVO.endPage }">
                         	<li class="${num eq pageVO.pageNum? 'active' : '' }">

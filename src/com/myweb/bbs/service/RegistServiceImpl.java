@@ -19,9 +19,8 @@ public class RegistServiceImpl implements BbsService {
 		String content = request.getParameter("content");
 		
 		BbsDAO dao = BbsDAO.getInstance();
-		dao.regist(writer, title, content);
+		dao.regist(writer, title, content);		
 		
-
 	}
 
 }

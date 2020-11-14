@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import com.myweb.bbs.service.BbsService;
 import com.myweb.bbs.service.ContentServiceImpl;
+import com.myweb.bbs.service.DeleteServiceImpl;
 import com.myweb.bbs.service.GetListServiceImpl;
 import com.myweb.bbs.service.RegistServiceImpl;
 import com.myweb.bbs.service.UpdateServiceImpl;
@@ -82,8 +83,13 @@ public class BbsController extends HttpServlet {
 		}else if(command.equals("/updateFrom.bbs")) {
 			service = new UpdateServiceImpl();
 			service.execute(request, response);
-			
+						
 			response.sendRedirect("content.bbs?bno=" + request.getParameter("bno"));
+		}else if(command.equals("/delete.bbs")) {
+			service = new DeleteServiceImpl();
+			service.execute(request, response);
+			
+			response.sendRedirect("main.bbs");
 		}
 	
 		

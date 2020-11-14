@@ -31,7 +31,8 @@ public class GetListServiceImpl implements BbsService {
 		request.setAttribute("list", list);
 		
 		request.setAttribute("pageVO", pageVO);
-		
+		System.out.println(pageNum);
+		System.out.println(amount);
 	}
 
 }

@@ -10,23 +10,23 @@
                     <form action="update.bbs?bno=${vo.bno }" method="post">
                         <div class="form-group">
                             <label>등록일</label>
-                            <input type="text" class="form-control" placeholder="${vo.regdate }" disabled >
+                            <input type="text" class="form-control" placeholder="${vo.regdate }" readonly >
                         </div>
                         <div class="form-group">
                             <label>글번호</label>
-                            <input type="text" class="form-control" placeholder="${vo.bno }번의 게시글" disabled>
+                            <input type="text" class="form-control" placeholder="${vo.bno }번" readonly>
                         </div>
                         <div class="form-group">
                             <label>글쓴이</label>
-                            <input type="text" class="form-control" placeholder="${vo.writer }" disabled>
+                            <input type="text" class="form-control" name="writer" value="${vo.writer }" placeholder="${vo.writer }" readonly>
                         </div>
                         <div class="form-group">
                             <label>제목</label>
-                            <input type="text" class="form-control" placeholder="${vo.title }" disabled>
+                            <input type="text" class="form-control" placeholder="${vo.title }" readonly>
                         </div>
                         <div class="form-group">
                             <label>내용</label>
-                            <textarea class="form-control" rows="5"disabled>${vo.content }</textarea>
+                            <textarea class="form-control" rows="5"readonly>${vo.content }</textarea>
                         </div>
                         
                         <!--구현로직: 버튼은 온클릭을 사용하던 자바스크립트를 이용해야 합니다-->
